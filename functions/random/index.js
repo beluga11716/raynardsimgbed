@@ -148,7 +148,10 @@ export async function onRequest(context) {
 
         // if param 'type' is set to 'img', return the image
         if (randomType == 'img') {
-    return Response.redirect(randomPath, 302);
+    return Response.redirect(
+        requestUrl.origin + randomPath,
+        302
+    );
 }
         
         if (resType == 'text') {
